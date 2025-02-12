@@ -91,8 +91,8 @@ Eg0 bra1n =, man-mad2 3hame =
 ```
 
 O resultado esperado da análise deste excerto, apresentado abaixo, é
-coincidente com o *output* do programa. Este foi, por isso, dado como correto
-para o *input* dado.
+coincidente com o *output* do programa. Este foi, por isso, considerado como
+correto para o *input* dado.
 
 ```
 31
