@@ -20,7 +20,7 @@ def generateDataset(plaincsv: str) -> set[MusicRecord]:
     matches = re.findall(r"[^ \n]+?(?:[^;]+;){6}[^\n]+", plaincsv)
 
     for i in range(1, len(matches)):
-        elems = re.findall(r"[^;]+", matches[i])
+        elems = re.findall(r"\"(?:[^\"]|\"\")*\"|[^;]+", matches[i])
 
         if len(elems) == 7:
             res.append(MusicRecord(elems[0],
