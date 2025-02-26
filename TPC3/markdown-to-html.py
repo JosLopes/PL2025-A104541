@@ -36,7 +36,8 @@ def sub_url_link(markdown: str) -> str:
 def main(filepath: str):
     with open(filepath, 'r') as file:
         content = file.read()
-        print(sub_url_link(sub_enumerated_list(sub_bold_and_italic(sub_headings(content)))))
+        with open(filepath + ".txt", 'w') as res:
+            res.write(sub_url_link(sub_enumerated_list(sub_bold_and_italic(sub_headings(content)))))
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
