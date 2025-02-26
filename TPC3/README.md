@@ -3,7 +3,7 @@
 Este documento apresenta a documentação relativa ao terceiro trabalho de casa
 proposto pela cadeira de processamento de linguagens. Foi pedido um conversor de
 MarkDown para HTML, escrito em python, que tivesse em conta os argumentos
-descritos no [enunciado](tpc3-1.pdf):
+descritos no [enunciado](tpc3-1.pdf).
 
 ## Metodologia
 
@@ -40,7 +40,7 @@ grupo de captura, ```(\*\*|\*)```, procura encontrar uma sequência de um ou doi
 carateres '*'. Estes deverão ser seguidos por uma sequência de um, ou mais,
 carateres que não o *newline*, ```(.+?)```, sequência esta que deve ser sucedida
 pela mesma *string* que terá sido capturada no inicio, ```\1```. Foi utilizada
-uma função secundária definida dentro da própria função de conversão, denominada
+uma função secundária definida na própria função de conversão, denominada
 por ```replace_match```, de modo a ser possível aplicar o comportamento
 desejado, que será diferente dependendo do delimitador encontrado:
 
@@ -63,14 +63,14 @@ A expressão regular estudada no parágrafo anterior é aplicada da seguinte for
 ## Conversor de Listas Enumeradas
 
 Devido à complexidade do problema que se procurava resolver com este conversor,
-decidi o separar em dois sub-problemas. Primeiramente, procurei encontrar todas
+decidi o separar em dois subproblemas. Primeiramente, procurei encontrar todas
 as instâncias de listas enumeradas no conteúdo, de modo a conseguir adicionar
-a tag ```<ol> ... </ol>```, antes de prosseguir com a conversão de cada elemento
+a *tag* ```<ol> ... </ol>```, antes de prosseguir com a conversão de cada elemento
 na lista. Para tal, foi utilizada a expressão regular ```((\d+\.\s*.*\n)+)```,
 que pode ser consultada no excerto de código apresentado abaixo. Esta captura
 qualquer parte do conteúdo com pelo menos uma entrada de uma lista enumerada,
 identificada por ```\d+\.\s*.*\n```. Pela expressão descrita, uma entrada pode
-ser identificada por uma sequência de um ou mais digitos (```\d+```), seguida
+ser identificada por uma sequência de um ou mais dígitos (```\d+```), seguida
 por um ponto e uma sequência de zero ou mais espaços brancos (```\.\s*```). Por
 sua vez, esta é seguida por uma sequência de zero ou mais carateres que não um
 *newline* (```.*```). O *match* da entrada termina assim que for encontrado um
@@ -86,8 +86,8 @@ regular que nos permitia identificar uma entrada de uma lista, com apenas duas
 modificações. Queremos capturar o texto respetivo à descrição da entrada para o
 poder aplicar na conversão, ou seja, precisamos de envolver a secção da
 expressão que o captura da seguinte forma: ```\d+\.\s*(.*)\n```. Podemos
-também remover o carater *newline* do final, uma vez que não o queremos
-involver na operação de substituição. O código completo pode ser consultado de
+também remover o carater *newline* do final, dado que não o queremos envolver
+na operação de substituição. O código completo pode ser consultado de
 seguida:
 
 ```py
@@ -102,8 +102,8 @@ vez que este conversor irá aceitar dois tipos de *links*, para imagens e para
 páginas *web*. A expressão regular utilizada é extremamente simples,
 ```(!?)\[(.*)\]\((.*)\)```, e procura encontrar os seguintes padrões de texto:
 ```[...](...)``` e ```?[...](...)```. Para providenciar os dois possíveis
-comportamentos, foi feita uma função auxiliar dentro da própria função de
-conversão, o código completo pode ser consultado de seguida:
+comportamentos, foi feita uma função auxiliar na própria função de
+conversão; o código completo pode ser consultado de seguida:
 
 ```py
     def replace_match(match):
@@ -120,6 +120,7 @@ conversão, o código completo pode ser consultado de seguida:
 ```
 
 ## Resultados e Conclusão
+
 O programa pode ser executado da seguinte forma:
 
 ```
