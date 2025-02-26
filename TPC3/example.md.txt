@@ -1,0 +1,20 @@
+<h1>Cabeçalho 1<\h1>
+<h1>Cabeçalho 2<\h1>
+<h1>Cabeçalho 3<\h1>
+
+<ol>
+<li>Mirror - Tarkovsky</li>
+<li>12 Angry Men - Sidney Lumet</li>
+<li>I Saw The TV Glow - Jane Schoenbrun</li>
+</ol>
+
+This is <b>bold text</b> and this is <i>italic text</i>.
+This is <b>bold and <i>italic</i> text together</b>.
+
+<ol>
+<li>This is the start of another list</li>
+<li>Another Item</li>
+</ol>
+
+This movie is <i>very</i> good and <b>free</b> to watch!!!: <a href="https://www.youtube.com/watch?v=NrMINC5xjMs">Tarkovsky's Mirror</a>
+Imagem de um coelho: <img src="http://www.coellho.com" alt="imagem dum coelho"/>
